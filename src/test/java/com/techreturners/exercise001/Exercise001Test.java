@@ -68,3 +68,5 @@ public class Exercise001Test {
         assertEquals(2, ex001.countLinuxUsers(users));
     }
 }
+
+
