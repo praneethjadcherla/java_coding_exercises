@@ -1,10 +1,11 @@
 package com.techreturners.exercise004;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Month;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Exercise004Test {
@@ -18,7 +19,7 @@ public class Exercise004Test {
         assertEquals(expected, ex004.getDateTime());
     }
 
-    @Disabled("You can remove this @Disabled annotation to run the test")
+
     @Test
     public void checkGetDateTimeWhenBothDateAndTimeIsSpecified() {
 
@@ -28,7 +29,7 @@ public class Exercise004Test {
         assertEquals(expected, ex004.getDateTime());
     }
 
-    @Disabled("You can remove this @Disabled annotation to run the test")
+
     @Test
     public void checkGetDateTimeWhenBothDateAndTimeIsSpecifiedWithDayRollOver() {
 
@@ -38,4 +39,21 @@ public class Exercise004Test {
         assertEquals(expected, ex004.getDateTime());
     }
 
+    @Test
+    public void checkGetDateTimeWhenBothDateAndTimeIsSpecifiedWithTimeNull() {
+
+        Exercise004 ex004 = new Exercise004(LocalDateTime.of(1996, Month.DECEMBER, 12, 0, 0, 0, 0));
+        LocalDateTime expected = LocalDateTime.of(2028, Month.AUGUST, 20, 1, 46, 40);
+
+        assertEquals(expected, ex004.getDateTime());
+    }
+
+    @Test
+    public void checkGetDateTimeWhenBothDateAndTimeIsSpecifiedWithStartDayOfYear() {
+
+        Exercise004 ex004 = new Exercise004(LocalDateTime.of(2001, Month.JANUARY, 1, 0, 0, 1, 0));
+        LocalDateTime expected = LocalDateTime.of(2032, Month.SEPTEMBER, 9, 1, 46, 41);
+
+        assertEquals(expected, ex004.getDateTime());
+    }
 }
