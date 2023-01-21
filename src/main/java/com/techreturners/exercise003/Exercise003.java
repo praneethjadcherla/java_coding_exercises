@@ -1,13 +1,22 @@
 package com.techreturners.exercise003;
 
+
 public class Exercise003 {
 
     int getIceCreamCode(String iceCreamFlavour) {
-        throw new UnsupportedOperationException(("You can delete this statement and add your code here."));
+       int icecreamCode=-1,i=0;
+       while(i<iceCreamFlavours().length){
+           if(iceCreamFlavours()[i].equals(iceCreamFlavour)) {
+               icecreamCode = i;
+               break;
+           }
+           i++;
+       }
+       return icecreamCode;
     }
 
     String[] iceCreamFlavours() {
-        throw new UnsupportedOperationException(("You can delete this statement and add your code here."));
+        String[] Flavours = { "Pistachio", "Raspberry Ripple", "Vanilla", "Mint Chocolate Chip", "Chocolate", "Mango Sorbet" };
+        return Flavours;
     }
-
 }
