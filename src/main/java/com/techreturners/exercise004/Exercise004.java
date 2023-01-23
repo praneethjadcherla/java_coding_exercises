@@ -5,10 +5,8 @@ import java.time.LocalDateTime;
 
 public class Exercise004 {
     private LocalDateTime dateTime;
-
     static final long gigaseconds=1000000000;
 
-g
     public Exercise004(LocalDate date) {
         this.dateTime = date.atStartOfDay();
     }
