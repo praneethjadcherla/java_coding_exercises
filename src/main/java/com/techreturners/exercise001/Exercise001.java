@@ -20,19 +20,15 @@ public class Exercise001 {
     }
 
     public String reverse(String sentence) {
-        String afterReverse = "";
-        for (int i = sentence.length() - 1; i >= 0; i--) {
-            afterReverse = afterReverse + sentence.charAt(i);
-        }
-        return afterReverse;
+        StringBuilder reverseString = new StringBuilder(sentence);
+        return reverseString.reverse().toString();
     }
 
     public int countLinuxUsers(List<User> users) {
-        int count = 0;
-        for (User u : users) {
-            if (u.getType() == "Linux")
-                count++;
-        }
-        return count;
+        long count_Linux_users = users
+                .stream()
+                .filter(u -> u.getType().equals("Linux"))
+                .count();
+        return (int) count_Linux_users;
     }
 }
